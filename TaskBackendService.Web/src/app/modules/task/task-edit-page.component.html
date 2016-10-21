@@ -1,0 +1,8 @@
+<div class="task-edit-page">
+    <task-edit-form 
+						(onSubmit)="onSubmit($event)"
+						(onCancel)="onCancel()"
+                        *ngIf="(!_activatedRoute.snapshot.params['id']) || (_activatedRoute.snapshot.params['id'] && (entity$ | async)?.id)"
+                        [task]="entity$ | async">
+	</task-edit-form>    
+</div>

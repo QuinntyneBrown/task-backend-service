@@ -1,0 +1,6 @@
+<div class="task-list-page">
+	<a [routerLink]="['/task']" href="">CREATE TASK</a>
+    <task-list [entities]="_store.tasks$() | async"
+                (onDelete)="_taskActions.remove({ id: $event.value.id })"
+                (onEdit)="_router.navigate(['task', $event.value.id])"></task-list>
+</div>
